@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment No 1</title>
+</head>
+<body>
+    <script>
+
+
+        //  QUE - take shop ammount from user if shop ammount less than 10,000 give 0% discount 
+        // if shop ammount is 10,000 - 20,000 give 10% discount 
+        // if shop ammount is 20,000 - 30,000 give 40% discount 
+        // if shop ammount is 30,000 - 40,000 give 50% discount 
+
+        let shop_amt = +prompt(`Enter Your Shop Ammount`) ;
+        let disc = 0 ;
+        
+        
+            if(shop_amt >10000 || shop_amt<=20000){
+                disc =10 ;
+                // let disc_amm = shop_amt * disc / 100 ;
+
+                if(shop_amt<=30000){
+                    disc = 20 ;
+                    // let disc_amm = shop_amt * disc / 100 ;
+                }
+                    if(shop_amt <=40000){
+                        disc = 30 ;
+                    }
+                        if(shop_amt>40000){
+                            disc = 50 ;
+                            // let disc_amm = shop_amt * disc / 100 ;
+                        }
+            }
+            else{
+                document.write(`Thank You For Visiting !`) ;
+            }
+               let disc_amm = shop_amt * disc / 100 ;
+
+                document.write(`<h1>Your Shopping Ammount is ${shop_amt}</h1>`);
+                document.write(`<h2>Coongrastulation You Get ${disc}% Discount & Your Discount Ammount is <mark>${disc_amm}</mark></h2>`) ;
+                
+                let final_amm = shop_amt - disc_amm ;
+
+                document.write(`<h2>Your Payable Ammount is : <b>${final_amm}</b></h2>`) ;
+
+
+
+
+                // let shop_amt = +prompt(`Enter Your Shop Ammount`) ;
+                // let disc = 0 ;
+                // let disc_amm = shop_amt * disc / 100 ;
+            //     let final_amm = shop_amt - disc_amm ;
+
+            // if(shop_amt >10000 || shop_amt<=20000){
+            //     disc =10 ;
+            //     
+            //     if(shop_amt<=30000){
+            //         disc = 20 ;
+            //         // let disc_amm = shop_amt * disc / 100 ;
+            //     }
+            //         if(shop_amt <=40000){
+            //             disc = 30 ;
+            //         }
+            //             if(shop_amt>40000){
+            //                 disc = 50 ;
+            //                 // let disc_amm = shop_amt * disc / 100 ;
+            //             }
+            // }
+            // else{
+            //     document.write(`Thank You For Visiting !`) ;
+            // }
+            
+
+            //     document.write(`<h1>Your Shopping Ammount is ${shop_amt}</h1>`);
+            //     document.write(`<h2>Coongrastulation You Get ${disc}% Discount & Your Discount Ammount is <mark>${disc_amm}</mark></h2>`) ;
+                
+           
+
+            //     document.write(`<h2>Your Payable Ammount is : <b>${final_amm}</b></h2>`) ;
+
+
+    </script>
+</body>
+</html>
