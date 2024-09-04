@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & EVENTS JS </title>
+</head>
+<body>
+    <h1 id="data" style="padding: 0px 30px; position: relative;  display: flex; justify-content: center; align-items: center;">ALAA KA DOM DOM KHELAYLA </h1>
+            <button id="dab" style="opacity: 0; position: relative; display: flex; justify-content: center;"> DAB LAVKAR</button>
+
+            <script>
+                    var first_elem = document.getElementById("data")
+                    
+                    first_elem.addEventListener("mouseenter", function(){
+                        // console.log("ALAY MOUSE VARTI")
+                        first_elem.style.backgroundColor = "yellow"
+                        first_elem.style.color = "black"
+
+                        first_elem.addEventListener("mouseenter", function(){
+                        // console.log("PARAT KASHALA ALAA")
+                        first_elem.style.backgroundColor = "lightgreen"
+                        first_elem.innerHTML = "PARAT KASHALA ALAA"
+                        first_elem.style.color = "maroon"
+
+                            first_elem.addEventListener("mouseleave", function(){
+                            // console.log("GELAY MOUSE BAHER")
+                            first_elem.style.backgroundColor = "lightblue"
+                            first_elem.innerHTML = "KY CHESHTA LAVLIY TATYAA     "
+                            first_elem.style.color = "black" 
+                            
+                            })
+                            
+                            first_elem.addEventListener("mouseenter", function(){
+                            // console.log("GELAY MOUSE BAHER")
+                            first_elem.style.backgroundColor = "white"
+                            first_elem.innerHTML = "ALAY TR DAB BUTTON ATA "
+                            first_elem.style.color = "crimson"  
+                            alert("DAB BUTTON LAVKAR", 5000) 
+                            batan.style.opacity = 1   
+                            })   
+                          
+                        })
+                        
+                        
+                    })
+                    
+                    first_elem.addEventListener("mouseleave", function(){
+                        // console.log("GELAY MOUSE BAHER")
+                        first_elem.style.backgroundColor = "Black"
+                        first_elem.innerHTML = "GELAY MOUSE BAHER"
+                        first_elem.style.color = "white"   
+                                         
+                    })
+                    // BUTTON JS 
+                    var batan = document.getElementById("dab") ;
+                    batan.addEventListener("", function(){
+                        alert("DHANYAWAD SHETH !")
+                    })
+            </script>
+</body>
+</html>
