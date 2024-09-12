@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment no-03</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    html,body{
+        height: 100vh;
+        width: 100%;
+    }
+    body{
+        
+        
+    }
+    #main{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: rgba(203, 121, 20, 0.281);
+    }
+    #main marquee{
+        height: 5vw;
+        width: 100%;
+        background-color: rgba(0, 255, 255, 0.381);
+        display: flex;
+        /* position: absolute; */
+        align-items: center;
+        margin-bottom: 0.5vw;
+        color: blue;
+    }
+    #main #top{
+        height: calc(50% - 5vw);
+        width: 100%;
+        background-color: rgba(0, 0, 255, 0.404);
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 5vw;
+    }
+    #top #credit{
+        height: 5vw;
+        width: calc(100% - 0);
+        /* background-color: red; */
+        padding: 3vw 3vw;
+        /* background-color: red; */
+        font-weight: 600;
+    }
+    #top #credit input{
+        padding: 0.5vw 0.5vw;
+    }
+    #top #debit{
+        height: 5vw;
+        width: calc(100% - 23vpx);
+        /* background-color: red; */
+        padding: 3vw 3vw;
+        font-weight: 600;
+    }
+    #top #debit input{
+        padding: 0.5vw 0.5vw;
+    }
+    #top #wallet{
+        height: 5vw;
+        width: calc(100% - 23vpx);
+        /* background-color: red; */
+        padding: 3vw 3vw;
+        font-weight: 600;
+    }
+    #top #wallet input{
+        padding: 0.5vw 0.5vw;
+    }
+   
+    #top-btn #btn-balance{
+        height: 3vw;
+        width: 20vw;
+        position: absolute;
+        left: 25%;
+        font-weight: 600;
+        font-size: 1.5vw;
+    }
+    #top-btn #btn-debit{
+        height: 3vw;
+        width: 20vw;
+        position: absolute;
+        left: 60%;
+        font-weight: 600;
+        font-size: 1.5vw;
+    }
+
+    /* COLUMNS */
+    #main #table{
+        height: calc(50% - 1vw);
+        width: 100%;
+        background-color: rgba(255, 0, 0, 0.562);
+        margin-top: 0.5vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    #main #table table{
+        border: 1px solid black;
+        width: 100%;
+        padding: 1vw 5vw;
+        
+    }
+    #table table tr{
+        height: 5vw;
+        background-color: tomato;
+        
+    }
+    #table table tr td{
+        padding: 2vw 5vw;
+        font-size: 2vw;
+        font-weight: 700;
+        border: 1.4px solid lightcoral;
+        box-shadow: 5px 5px 13px 1px coral;
+
+    }
+</style>
+<body>
+    <!-- QUE- make calculator for the debit and credit calculation and store in alance shit and change whenever user changes the input value   -->
+
+    <div id="main">
+        <marquee behavior="alternate" direction="right"><h1>ASSIGNMENT NO-03</h1></marquee>
+        <div id="top">
+            <div id="credit">
+                <label for="">Credit=></label>
+                <input type="text" placeholder="credit" id="credit-inp">
+            </div>
+            
+            <div id="debit">
+                <label for="">Debit=></label>
+                <input type="text" placeholder="debit" id="debit-inp">
+            </div>
+
+            <div id="wallet">
+                <label for="">Wallet=></label>
+            <input type="text" placeholder="wallet" id="wallet-inp">
+            </div>
+            
+            <div id="top-btn">
+                <button id="btn-balance">ADD BALANCE</button>
+                <button id="btn-debit" >DEBIT</button>
+            </div>
+        </div>
+        <div id="table">
+            <table>
+                <tr>
+                    <td>Sr. No.</td>
+                    <td>Credit</td>
+                    <td>Debit</td>
+                    <td>Balance</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td id="table-credit"></td>
+                    <td id="table-debit"></td>
+                    <td id="table-balance"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+
+</body>
+<script>
+    
+document.getElementById("btn-balance").addEventListener("click", function () {
+    var credit = document.getElementById("credit-inp").value ;
+    var wallet = document.getElementById("wallet-inp").value ;
+    // var balance = parseInt(credit) - parseInt(debit) ;
+    var  tableCredit = document.getElementById("table-credit");
+
+
+    document.getElementById("table-credit").innerHTML = credit ;
+    document.getElementById("table-balance").innerHTML = credit ;
+    
+})
+
+document.getElementById("btn-debit").addEventListener("click", function () {
+    var credit = document.getElementById("credit-inp").value ;
+    var  debit = document.getElementById("debit-inp").value ;
+    var wallet = document.getElementById("wallet-inp").value ;
+    var balance = parseInt(credit) - parseInt(debit) ;
+
+    document.getElementById("table-debit").innerHTML = debit ;
+    document.getElementById("table-balance").innerHTML = balance ;
+
+})
+</script>
+</html>
